@@ -41,11 +41,14 @@ class ItemSearch extends Item
     public function search($params)
     {
         $query = Item::find();
-
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'pagination' => [
+                'pageSize' => 8,
+                'totalCount' => $query->count(),
+            ],
         ]);
 
         $this->load($params);

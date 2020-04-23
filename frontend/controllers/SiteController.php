@@ -95,7 +95,7 @@ class SiteController extends Controller
         ]);
 
         return $this->render('index', [
-            'provider' => $provider,
+            'dataProvider' => $provider,
             'pagination' => $pagination
         ]);
     }

@@ -34,24 +34,10 @@ class ItemController extends Controller
         $searchModel = new ItemSearch();
         $items = Item::find()->joinWith('category')->orderBy('id');
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $pagination = new Pagination([
-            'pageSize' => 5,
-            'totalCount' => $items->count(),
-            ],
-            ['sort' => [
-                'defaultOrder' => [
-                    'id' => SORT_ASC,
-                ],
-            ]]);
-        $provider = new ActiveDataProvider([
-            'query' => $items,
-        ]);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
-            'pagination' => $pagination,
             'dataProvider' => $dataProvider,
-            'provider' => $provider,
         ]);
     }
 

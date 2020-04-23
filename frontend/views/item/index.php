@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\LinkPager;
+use app\models\ItemSearch;
 
 /* @var $this yii\web\View */
 /* @var $searchModel frontend\models\ItemSearch */
@@ -21,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php 
         echo $this->render('_search', ['model' => $searchModel]); 
-        $items = $provider->getModels();
+        $items = $dataProvider->getModels();
     ?>
 
     <?= GridView::widget([
@@ -37,8 +38,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
+        'pager' => [
+            'class' => '\yii\widgets\LinkPager',
+        ]
     ]); ?>
-    <?php   echo LinkPager::widget(['pagination' => $pagination]); ?>
-
-
 </div>

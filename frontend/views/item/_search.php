@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use app\models\Item_Category;
 
 /* @var $this yii\web\View */
 /* @var $model frontend\models\ItemSearch */
@@ -15,14 +17,8 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'id') ?>
-
-    <?= $form->field($model, 'name') ?>
-
-    <?= $form->field($model, 'price') ?>
-
-    <?= $form->field($model, 'category_id') ?>
-
+    <?= $form->field($model, 'category_id')->dropDownList(ArrayHelper::map(Item_Category::find()->all(), 'id','name'), ['prompt' => 'Select Category'])->label('Item Category') ?>
+    
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
         <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>

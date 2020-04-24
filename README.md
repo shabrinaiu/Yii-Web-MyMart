@@ -60,8 +60,8 @@ environments/            contains environment-based overrides
 ```
 
 
-![Screenshot](Screenshot/1.png)
-![Screenshot](Screenshot/2.png)
-![Screenshot](Screenshot/3.png)
-![Screenshot](Screenshot/4.png)
-![Screenshot](Screenshot/5.png)
+![Screenshot](screenshot/1.png)
+![Screenshot](screenshot/2.png)
+![Screenshot](screenshot/3.png)
+![Screenshot](screenshot/4.png)
+![Screenshot](screenshot/5.png)
